@@ -104,7 +104,7 @@
         function getNextCell(currentCell) {
             let row = parseInt(currentCell.dataset.row);
             let col = parseInt(currentCell.dataset.col);
-            if (col < 4) {
+            if (col < 5) {
                 return document.querySelector(`[data-row='${row}'][data-col='${col + 1}']`);
             }
             return null;
