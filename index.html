@@ -114,16 +114,16 @@
         function checkGuess() {
             let cells = document.querySelectorAll(".cell");
             let guess = "";
-            for (let i = 0; i < 5; i++) {
-                let cell = cells[attempt * 5 + i];
+            for (let i = 0; i < 6; i++) {
+                let cell = cells[attempt * 6 + i];
                 if (!cell.textContent) {
                     message.textContent = "Preencha todas as letras antes de confirmar.";
                     return;
                 }
                 guess += cell.textContent.toLowerCase();
             }
-            for (let i = 0; i < 5; i++) {
-                let cell = cells[attempt * 5 + i];
+            for (let i = 0; i < 6; i++) {
+                let cell = cells[attempt * 6 + i];
                 setTimeout(() => {
                     cell.classList.add("flip");
                     setTimeout(() => {
@@ -141,7 +141,7 @@
             attempt++;
             if (guess === palavraDoDia) {
                 setTimeout(() => message.textContent = "Parabéns! Você acertou!", 4000);
-            } else if (attempt >= 5) {
+            } else if (attempt >= 6) {
                 setTimeout(() => message.textContent = "Fim do jogo! A palavra era " + palavraDoDia, 4000);
             } else {
                 setTimeout(() => {
